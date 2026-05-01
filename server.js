@@ -25,6 +25,10 @@ app.use(logger);
 swaggerDocs(app);
 
 // Routes
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to LogiAPI - The Courier Tracking System', docs: '/api-docs' });
+});
+
 app.use('/auth', require('./src/routes/authRoutes'));
 app.use('/shipments', require('./src/routes/shipmentRoutes'));
 app.use('/analytics', require('./src/routes/analyticsRoutes'));
